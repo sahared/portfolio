@@ -1,3 +1,3 @@
-Sitemap: https://dikshasahare.netlify.app/sitemap.xml
+Sitemap: https://diksha-sahare.vercel.app/sitemap.xml
 User-agent: *
 Allow: /

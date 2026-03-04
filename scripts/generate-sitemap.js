@@ -7,7 +7,7 @@ import { SitemapStream, streamToPromise } from "sitemap";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const BASE_URL = "https://dikshasahare.netlify.app";
+const BASE_URL = "https://diksha-sahare.vercel.app";
 const projectsDataPath = path.join(__dirname, "../src/data/projects.ts");
 
 // Extract IDs from projects.ts using regex
