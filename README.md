@@ -1,120 +1,178 @@
-# Portfolio v2
+# Diksha Sahare | Portfolio
 
-A modern, responsive personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS. This project showcases your professional experience, projects, and contact information in a clean and visually appealing format.
+A modern, responsive personal portfolio website showcasing professional experience, projects, and expertise. Built with React, TypeScript, and Vite.
 
-<br>
+---
+
+## Overview
+
+This portfolio highlights full-stack development experience across cloud-native systems, AI-driven applications, and enterprise platforms. It includes a dynamic hero section, project showcases, academic background, certifications, and a working contact form.
+
+---
 
 ## Features
 
-- **Home Page:** Hero section, tech stack, and featured projects.
-- **About Page:** Academic background, certifications, experience, research, and volunteer work.
-- **Projects Page:** Detailed previews of various projects with images and descriptions.
-- **Contact Page:** Contact form and call-to-action for collaboration.
-- **Responsive Design:** Fully responsive and mobile-friendly layout.
-- **Modern UI:** Built with Tailwind CSS for fast and customizable styling.
-- **Error Boundaries:** Robust error handling for better user experience.
+| Feature | Description |
+|--------|-------------|
+| **Hero Section** | Animated introduction with tech stack and professional summary |
+| **About Page** | Academic background, certifications, experience, research, and volunteer work |
+| **Projects** | Detailed project previews with images, tech stack, and GitHub links |
+| **Contact Form** | Web3Forms integration for reliable message delivery |
+| **Dark Mode** | System-aware theme toggle with persisted preference |
+| **Responsive Design** | Mobile-first layout, works across all screen sizes |
+| **SEO Ready** | Meta tags, sitemap, and Open Graph configured |
+| **Performance** | Lazy-loaded routes, optimized images, production build |
 
-<br>
+---
 
 ## Tech Stack
 
-- [React](https://react.dev/)
+**Core**
+- [React 19](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
+- [Vite 7](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-<br>
+**UI & Animation**
+- [Framer Motion](https://www.framer.com/motion/)
+- [Lucide React](https://lucide.dev/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+
+**Routing**
+- [React Router v7](https://reactrouter.com/)
+
+---
 
 ## Project Structure
 
 ```
 ├── public/
-│   ├── images/           # Profile, logos, and photography
-│   └── projects/         # Project images
+│   ├── images/           # Profile photos, logos, project thumbnails
+│   ├── projects/         # Project-specific images
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── src/
-│   ├── components/       # UI and section components
-│   ├── data/             # Data for photos and projects
-│   ├── pages/            # Page components (Home, About, Projects, Contact)
-│   └── types/            # TypeScript types
+│   ├── components/       # Reusable UI components
+│   │   ├── sections/     # Page sections (Hero, Contact, About, etc.)
+│   │   └── ui/           # Navigation, Footer, ErrorBoundary
+│   ├── data/             # Projects data
+│   ├── lib/              # Supabase client (legacy)
+│   ├── pages/            # Route-level pages
+│   └── types/            # TypeScript interfaces
+├── scripts/
+│   └── generate-sitemap.js
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
-├── vite.config.ts
-└── ...
+├── tsconfig.json
+└── vite.config.ts
 ```
-
-<br>
-
-## Getting Started
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/sahared/portfolio.git
-   cd portfolio
-   ```
-2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
-3. **Set up environment variables:**
-   Create a `.env` file in the root directory and add your Web3Forms API key:
-   ```env
-   VITE_WEB3FORMS_ACCESS_KEY=your_api_key_here
-   ```
-   
-   Alternatively, you can copy the example file:
-   ```sh
-   cp .env.example .env
-   ```
-   Then replace the placeholder with your actual Web3Forms key from [https://web3forms.com/](https://web3forms.com/)
-4. **Start the development server:**
-   ```sh
-   npm run dev
-   ```
-5. **Build for production:**
-   ```sh
-   npm run build
-   ```
-
-<br>
-
-## Deployment
-
-This project is ready to deploy on platforms like [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/). Configuration files like `netlify.toml` are included for easy deployment.
-
-### Deploying to Netlify
-
-1. Connect your GitHub repository to Netlify
-2. In the Netlify dashboard, go to your site settings
-3. Under "Build & deploy" → "Environment", add the following environment variable:
-   - `VITE_WEB3FORMS_ACCESS_KEY`
-4. Make sure the build settings are:
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-
-This environment variable is required for the contact form to work properly.
-
-<br>
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-<br>
-
-## 🙋‍♂️ Author
-
-- **Diksha Sahare**  
-  Email: [sahare.d@northeastern.edu](mailto:sahare.d@northeastern.edu)  
-  LinkedIn: [https://www.linkedin.com/in/dikshasahare/](https://www.linkedin.com/in/dikshasahare/)  
-  GitHub: [https://github.com/sahared](https://github.com/sahared)
-
-<br>
 
 ---
 
-<p align="center">
-  ⭐ <b>Found this useful? Star the repo &amp; Let’s automate the world together! 🌍</b>
-</p>
+## Prerequisites
+
+- **Node.js** ≥ 18.0.0
+- **npm** ≥ 8.0.0
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/sahared/portfolio.git
+cd portfolio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment variables
+
+Create a `.env` file in the root directory:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and add your [Web3Forms](https://web3forms.com/) access key:
+
+```env
+VITE_WEB3FORMS_ACCESS_KEY=your_api_key_here
+```
+
+> **Note:** The contact form requires a valid Web3Forms API key. Sign up at [web3forms.com](https://web3forms.com/) to get a free key.
+
+### 4. Development server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### 5. Production build
+
+```bash
+npm run build
+```
+
+Output is written to the `dist/` directory. Preview the build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## Deployment
+
+### Netlify
+
+1. Connect your GitHub repository to [Netlify](https://www.netlify.com/).
+2. Build settings:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+3. Environment variables (Build & deploy → Environment):
+   - `VITE_WEB3FORMS_ACCESS_KEY` = your Web3Forms key
+
+### Vercel
+
+1. Import the repository in [Vercel](https://vercel.com/).
+2. Add environment variable: `VITE_WEB3FORMS_ACCESS_KEY`
+3. Deploy (Vercel detects Vite automatically).
+
+---
+
+## Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Production build with TypeScript check and sitemap generation |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
+
+---
+
+## License
+
+This project is private and not licensed for redistribution.
+
+---
+
+## Author
+
+**Diksha Sahare**  
+Full-Stack Engineer | Cloud & AI-driven solutions
+
+- **Email:** [sahare.d@northeastern.edu](mailto:sahare.d@northeastern.edu)
+- **LinkedIn:** [linkedin.com/in/dikshasahare](https://www.linkedin.com/in/dikshasahare/)
+- **GitHub:** [github.com/sahared](https://github.com/sahared)
 
 ---
